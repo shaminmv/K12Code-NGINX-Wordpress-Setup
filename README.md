@@ -158,9 +158,9 @@ Then copy and paste the content below into the file and save it. Replace the hig
 server {
     listen 80;
     listen [::]:80;
-    root /var/www/html/wordpress;
+    root /var/www/html/tharafwp.duckdns.org;
     index  index.php index.html index.htm;
-    server_name  example.com www.example.com;
+    server_name  tharafwp.duckdns.org;
 
      client_max_body_size 100M;
 
