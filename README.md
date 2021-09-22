@@ -111,33 +111,7 @@ WordPress works with the PHP that comes standard with Debian 10. We’ll set up 
 $ sudo apt install php php-{fpm,pear,cgi,common,zip,mbstring,net-socket,gd,xml-util,mysql,gettext,bcmath}
 
 ```
-## 9. Update Nginx to work with PHP
 
-
-
-
-```sudo vim /etc/php/7.0/fpm/php.ini```
-
-Then make the changes on the following lines below in the file and save. The value below are great settings to apply in your environments.
-
-```
-file_uploads = On
-allow_url_fopen = On
-memory_limit = 256M
-upload_max_filesize = 100M
-cgi.fix_pathinfo=0
-max_execution_time = 360
-date.timezone = America/Chicago
-
-post_max_size 64M
-upload_max_filesize 64M
-max_file_uploads 128M
-max_input_vars 5000
-
-```
-If you are getting nginx timeout error ; you may want to increase max_execution_time to may be 290000 ?
-Now reload PHP-FPM: ```sudo service ngix restart
-sudo php7.1-fpm restart```
 
 ## 10. Create Wordpress DB
 Now that you’ve install all the packages that are required, continue below to start configuring the servers. First run the commands below to create WordPress database.
