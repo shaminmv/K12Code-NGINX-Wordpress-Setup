@@ -69,14 +69,9 @@ Want to know more about zsh? Check [zsh](https://ohmyz.sh/)
 If you want a nicer Vim experience, copy .vimrc in this repo to the root's home directory.
 
 ## 6. Install Nginx
-First, let's check what version is the latest in the apt repository: $ apt-cache show nginx (it is most likely behind) Visit [http://nginx.org/en/linux_packages.html](Nginx repositories page) to see how to add the repository to our apt.
 
 ```
-$ cat /etc/*-release 
-$ echo "deb https://nginx.org/packages/debian/ stretch nginx" > sudo \
-  /etc/apt/sources.list.d/nginx.list
-$  curl -vs https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
-$ sudo apt-get update && sudo apt-get install -y nginx
+$ sudo apt install nginx
 $ sudo service nginx start
 $ ifconfig
 ```
