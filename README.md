@@ -184,30 +184,29 @@ After configuring the VirtualHost above, enable it by running the commands below
 
 Reload ngix , before reloading always run a config test. Now if your domain is pointed to the server you can view the wp config page. Congrats
 
-## 15. Configure Wordpress
-Now that Nginx is configured, lets WordPress configuration file.
-``` sudo vim /var/www/html/wordpress/wp-config.php ```
+## 9. Update Nginx to work with PHP
 
-Edit the db settings
+
+
+
+```sudo vim /etc/php/7.1/fpm/php.ini```
+
+Then make the changes on the following lines below in the file and save. The value below are great settings to apply in your environments.
+
 ```
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'wpdb');
+file_uploads = On
+allow_url_fopen = On
+memory_limit = 256M
+upload_max_filesize = 100M
+cgi.fix_pathinfo=0
+max_execution_time = 360
+date.timezone = America/Chicago
 
-/** MySQL database username */
-define('DB_USER', 'wpuser');
+post_max_size 64M
+upload_max_filesize 64M
+max_file_uploads 128M
+max_input_vars 5000
 
-/** MySQL database password */
-define('DB_PASSWORD', 'user_password_here');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
 ```
 
 ## Step 16: Wordpress plugin installation settings
