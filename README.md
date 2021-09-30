@@ -184,12 +184,12 @@ After configuring the VirtualHost above, enable it by running the commands below
 
 Reload ngix , before reloading always run a config test. Now if your domain is pointed to the server you can view the wp config page. Congrats
 
-## 9. Update Nginx to work with PHP
+## 16. Update Nginx to work with PHP
 
 
 
 
-```sudo vim /etc/php/7.1/fpm/php.ini```
+```sudo vim /etc/php/7.0/fpm/php.ini```
 
 Then make the changes on the following lines below in the file and save. The value below are great settings to apply in your environments.
 
