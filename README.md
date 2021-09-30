@@ -208,6 +208,7 @@ max_file_uploads 128M
 max_input_vars 5000
 
 ```
+after write and exiting, restart nginx and php
 
 ## Step 16: Wordpress plugin installation settings
 Visit the domain in your browser to start the WordPress wizard. Create a new account and log into WordPress to start installing.
